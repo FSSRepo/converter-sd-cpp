@@ -114,7 +114,6 @@ jobs:
 
     needs:
       - ubuntu-latest-cmake
-      - macOS-latest-cmake
       - windows-latest-cmake
 
     steps:

@@ -17,12 +17,14 @@ else()
     set(SD_STANDALONE OFF)
 endif()
 
-set(CONVERT_APP convert)
-
-add_executable(${CONVERT_APP} convert.cpp)
+set(BUILD_SHARED_LIBS OFF)
 
 add_subdirectory(ggml)
 add_subdirectory(thirdparty)
+
+set(CONVERT_APP convert)
+
+add_executable(${CONVERT_APP} convert.cpp)
 
 target_link_libraries(${CONVERT_APP} PUBLIC ggml zip)
 target_include_directories(${CONVERT_APP} PUBLIC . thirdparty)
